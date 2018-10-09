@@ -1,6 +1,7 @@
 package pkgCore;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import pkgEnum.eRank;
@@ -38,6 +39,18 @@ public class Deck {
 			}
 		}
 		return (null);
+	}
+	
+	public int getRemaining(Object eNum) {
+		int j = 0;
+			for (int i = 0; i<cardsInDeck.size()-1; i++)
+				if (eNum instanceof eSuit) {
+					if (cardsInDeck.get(i).geteSuit()==eNum)
+						j++;
+				} else { 
+					if (cardsInDeck.get(i).geteRank()==eNum)
+						j++;
+				} return j; 
 	}
 
 	public int getiDeckCount()
